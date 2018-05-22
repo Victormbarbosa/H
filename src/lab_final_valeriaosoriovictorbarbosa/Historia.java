@@ -110,7 +110,7 @@ public class Historia extends javax.swing.JFrame {
 
         marco.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
         marco.setIcon(new javax.swing.ImageIcon("D:\\Users\\Victor\\Desktop\\borde2122.png")); // NOI18N
-        jPanel2.add(marco, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 260, 130, 90));
+        jPanel2.add(marco, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 120, 30));
 
         DesA.setText("A");
         DesA.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
