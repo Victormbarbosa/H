@@ -147,31 +147,34 @@ public class CargarPartida extends javax.swing.JFrame {
         Metodos e = new Metodos();
         Inicio in = new Inicio();
         String nickname = (String) nicks.getSelectedItem();
-        nick = nickname;
         boolean sw = false;
-        while (p != null && sw == false) {
-            if (nick.equals(e.CampoEspecifico(p.info, 2))) {
-                
+        if (!"...".equals(nickname)) {
+            nick = nickname;
+            while (p != null && sw == false) {
+                if (nick.equals(e.CampoEspecifico(p.info, 2))) {
+
                     lc.Eliminar(p, antp, lc);
                     sw = true;
-                
-            }
-            antp=p;
-            p = p.link;
-        }
-        try {
-            e.Sobreescribir(lc, "CheckPoint.txt");
-        } catch (IOException ex) {
-            Logger.getLogger(CargarPartida.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        Node t = lc.frente;
-        nicks.removeAllItems();
-        nicks.addItem("...");
-        while (t != null) {
-            nicks.addItem(e.CampoEspecifico(t.info, 2));
-            t = t.link;
-        }
 
+                }
+                antp = p;
+                p = p.link;
+            }
+            try {
+                e.Sobreescribir(lc, "CheckPoint.txt");
+            } catch (IOException ex) {
+                Logger.getLogger(CargarPartida.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            Node t = lc.frente;
+            nicks.removeAllItems();
+            nicks.addItem("...");
+            while (t != null) {
+                nicks.addItem(e.CampoEspecifico(t.info, 2));
+                t = t.link;
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione una opcion que no sea la por defecto.");
+        }
     }//GEN-LAST:event_EliminarActionPerformed
 
     private void cargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarActionPerformed
@@ -180,24 +183,27 @@ public class CargarPartida extends javax.swing.JFrame {
         Metodos e = new Metodos();
         Inicio in = new Inicio();
         String nickname = (String) nicks.getSelectedItem();
-        nick = nickname;
-        while (p != null) {
-            if (nick.equals(e.CampoEspecifico(p.info, 2))) {
-                in.desicion = Integer.parseInt(e.CampoEspecifico(p.info, 1)) - 1;
-                in.orden = e.CampoEspecifico(p.info, 3);
+        if (!"...".equals(nickname)) {
+            nick = nickname;
+            while (p != null) {
+                if (nick.equals(e.CampoEspecifico(p.info, 2))) {
+                    in.desicion = Integer.parseInt(e.CampoEspecifico(p.info, 1)) - 1;
+                    in.orden = e.CampoEspecifico(p.info, 3);
+                }
+                p = p.link;
             }
-            p = p.link;
-        }
-        Historia h;
-        try {
-            h = new Historia();
-            h.setVisible(true);
-        } catch (IOException ex) {
-            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
-        }
+            Historia h;
+            try {
+                h = new Historia();
+                h.setVisible(true);
+            } catch (IOException ex) {
+                Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
+            }
 
-        dispose();
-
+            dispose();
+        } else {
+            JOptionPane.showMessageDialog(null, "Seleccione una opcion que no sea la por defecto.");
+        }
     }//GEN-LAST:event_cargarActionPerformed
 
     private void partida_nueva1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partida_nueva1ActionPerformed

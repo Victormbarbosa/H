@@ -295,35 +295,32 @@ public class Historia extends javax.swing.JFrame {
         String save = JOptionPane.showInputDialog(null, "Digite el numero de la opcion que desea realizar:" + "\n" + "1. Guardar partida y salir. " + "\n" + "2. Guardar partida." + "\n" + "3. Salir sin guardar. " + "\n" + "4. Volver al juego. ");
         Metodos e = new Metodos();
         Inicio in = new Inicio();
-        int sw =0;
+        int sw = 0;
         CargarPartida cp = new CargarPartida();
-        String cadena = in.desicion + ":" + in.nick + ":"+in.orden+":";
+        String cadena = in.desicion + ":" + in.nick + ":" + in.orden + ":";
         if (save.equals("")) {
             JOptionPane.showMessageDialog(null, "Por favor, digite alguna de las tres opciones");
-
         } else {
             int res = Integer.parseInt(save);
             if (res < 1 || res > 4) {
                 JOptionPane.showMessageDialog(null, "Opcion Digitida no es valida, intente otra vez.");
-
             } else {
                 Node p = cp.lc.frente;
-                System.out.println("" + p.info);
                 if (res == 1 || res == 2) {
-                    while (p != null && sw==0) {
+                    while (p != null && sw == 0) {
                         String comprobar = e.CampoEspecifico(p.info, 2);
                         if (comprobar.equals(in.nick)) {
                             String s = JOptionPane.showInputDialog(null, "Archivo ya existente Desea sobreescribirlo? \n 1. Si \n 2. No");
                             if ("1".equals(s)) {
                                 p.setInfo(cadena);
-                                sw=1;
+                                sw = 1;
                             } else {
                                 if ("2".equals(s)) {
                                 }
                             }
                         } else {
                             lc.insertar(cadena);
-                            sw=1;
+                            sw = 1;
                         }
                         p = p.link;
 
@@ -332,6 +329,10 @@ public class Historia extends javax.swing.JFrame {
                         e.Sobreescribir(lc, "CheckPoint.txt");
                     } catch (IOException ex) {
                         Logger.getLogger(Historia.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                    if (res == 1) {
+                        in.setVisible(true);
+                        dispose();
                     }
                 }
                 if (res == 3) {
