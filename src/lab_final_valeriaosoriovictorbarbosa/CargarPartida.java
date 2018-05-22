@@ -14,7 +14,9 @@ import javax.swing.JOptionPane;
 import static lab_final_valeriaosoriovictorbarbosa.Inicio.nick;
 
 public class CargarPartida extends javax.swing.JFrame {
-
+    
+    public static ListaCola lc;
+    
     public CargarPartida() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -26,15 +28,8 @@ public class CargarPartida extends javax.swing.JFrame {
 
     }
 
-    public void LeerCheckPoint() throws IOException {
-        Metodos e = new Metodos();
-
-        CrearLista();
-
-    }
-
     public void CrearLista() throws FileNotFoundException, IOException {
-        ListaCola lc = new ListaCola();
+        lc = new ListaCola();
         Metodos e = new Metodos();
         File f = new File("CheckPoint.txt");
         FileReader fr = new FileReader(f);
@@ -45,8 +40,7 @@ public class CargarPartida extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "No existen Checkpoints previos.");
         } else{
             while (bef!=null) {
-                ty = e.CampoEspecifico(bef, 2);
-                lc.insertar(ty);
+                lc.insertar(bef);
                 bef=br.readLine();;
             }
             /*lc.ShowList();*/
@@ -55,7 +49,7 @@ public class CargarPartida extends javax.swing.JFrame {
         fr.close();
         Node p=lc.frente;
         while(p!=null){
-            nicks.addItem(p.info);
+            nicks.addItem(e.CampoEspecifico(p.info, 2));
             p=p.link;
         }
     }
@@ -155,9 +149,18 @@ public class CargarPartida extends javax.swing.JFrame {
 
     private void cargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarActionPerformed
         // TODO add your handling code here:
-
+        Node p = lc.frente;
+        Metodos e = new Metodos();
+        Inicio in = new Inicio();
         String nickname = (String) nicks.getSelectedItem();
         nick = nickname;
+        while(p!=null){
+            if(nick.equals(e.CampoEspecifico(p.info, 2))){
+                in.desicion=Integer.parseInt(e.CampoEspecifico(p.info, 1))-1;
+                in.orden = e.CampoEspecifico(p.info, 3);
+            }
+            p=p.link;
+        }
         Historia h;
         try {
             h = new Historia();

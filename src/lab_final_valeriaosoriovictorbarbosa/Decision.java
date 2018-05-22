@@ -63,7 +63,7 @@ public class Decision extends javax.swing.JFrame {
         jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, 50, 30));
 
         Dia.setFont(new java.awt.Font("Old English Text MT", 0, 48)); // NOI18N
-        Dia.setText("Dia");
+        Dia.setText("Dia X");
         jPanel2.add(Dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 230, 120));
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
@@ -76,7 +76,7 @@ public class Decision extends javax.swing.JFrame {
         jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 50, 30));
 
         Impresor.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
-        Impresor.setText("Impresor");
+        Impresor.setText("Recuento de las desiciones tomadas    ");
         Impresor.setToolTipText("");
         Impresor.setVerticalAlignment(javax.swing.SwingConstants.TOP);
         jPanel2.add(Impresor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 270, 170));

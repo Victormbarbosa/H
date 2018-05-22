@@ -13,6 +13,7 @@ import java.util.TimerTask;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JButton;
+import static lab_final_valeriaosoriovictorbarbosa.CargarPartida.lc;
 
 public class Historia extends javax.swing.JFrame {
 
@@ -40,7 +41,7 @@ public class Historia extends javax.swing.JFrame {
         marco.setVisible(false);
         UA.setVisible(false);
         multi(in.desicion, 1);
-        ViMu = e.VivirOMorir(A, B, DesA, DesB, UA, ViMu,arbol,marco);
+        ViMu = e.VivirOMorir(A, B, DesA, DesB, UA, ViMu, arbol, marco);
 
     }
 
@@ -291,8 +292,54 @@ public class Historia extends javax.swing.JFrame {
     }//GEN-LAST:event_abajoActionPerformed
 
     private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
-        // TODO add your handling code here:
+        String save = JOptionPane.showInputDialog(null, "Digite el numero de la opcion que desea realizar:" + "\n" + "1. Guardar partida y salir. " + "\n" + "2. Guardar partida." + "\n" + "3. Salir sin guardar. " + "\n" + "4. Volver al juego. ");
+        Metodos e = new Metodos();
+        Inicio in = new Inicio();
+        int sw =0;
+        CargarPartida cp = new CargarPartida();
+        String cadena = in.desicion + ":" + in.nick + ":"+in.orden+":";
+        if (save.equals("")) {
+            JOptionPane.showMessageDialog(null, "Por favor, digite alguna de las tres opciones");
 
+        } else {
+            int res = Integer.parseInt(save);
+            if (res < 1 || res > 4) {
+                JOptionPane.showMessageDialog(null, "Opcion Digitida no es valida, intente otra vez.");
+
+            } else {
+                Node p = cp.lc.frente;
+                System.out.println("" + p.info);
+                if (res == 1 || res == 2) {
+                    while (p != null && sw==0) {
+                        String comprobar = e.CampoEspecifico(p.info, 2);
+                        if (comprobar.equals(in.nick)) {
+                            String s = JOptionPane.showInputDialog(null, "Archivo ya existente Desea sobreescribirlo? \n 1. Si \n 2. No");
+                            if ("1".equals(s)) {
+                                p.setInfo(cadena);
+                                sw=1;
+                            } else {
+                                if ("2".equals(s)) {
+                                }
+                            }
+                        } else {
+                            lc.insertar(cadena);
+                            sw=1;
+                        }
+                        p = p.link;
+
+                    }
+                    try {
+                        e.Sobreescribir(lc, "CheckPoint.txt");
+                    } catch (IOException ex) {
+                        Logger.getLogger(Historia.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+                if (res == 3) {
+                    in.setVisible(true);
+                    dispose();
+                }
+            }
+        }
     }//GEN-LAST:event_GuardarActionPerformed
 
     /**
@@ -343,7 +390,7 @@ public class Historia extends javax.swing.JFrame {
     private javax.swing.JButton DesB;
     private javax.swing.JLabel Desicion;
     private javax.swing.JLabel Dia;
-    private javax.swing.JButton Guardar;
+    public javax.swing.JButton Guardar;
     private javax.swing.JLabel Impresor;
     private javax.swing.JButton UA;
     public javax.swing.JButton abajo;

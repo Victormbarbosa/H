@@ -1,10 +1,13 @@
 package lab_final_valeriaosoriovictorbarbosa;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
+import java.io.PrintWriter;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -17,7 +20,7 @@ public class Metodos {
     public Metodos() {
     }
 
-    public String VivirOMorir(JLabel r, JLabel r1, JButton b, JButton b1, JButton b3, String v,  JLabel j, JLabel t) {
+    public String VivirOMorir(JLabel r, JLabel r1, JButton b, JButton b1, JButton b3, String v, JLabel j, JLabel t) {
         if (r.getText().equals("Hasta aqui ha llegado tu camino")) {
             v = r.getText();
             b.setVisible(false);
@@ -46,7 +49,7 @@ public class Metodos {
         j.setFocusPainted(false);
         j.setBorderPainted(false);
     }
-    
+
     public String concatenar(String nombre) throws IOException {
         String temp = this.LeerArchivoV1(nombre);
         if ("null".equals(temp)) {
@@ -126,7 +129,7 @@ public class Metodos {
         return ya;
 
     }
-    
+
     public String Desco(String x, int y) {//Desco se va a encargar que dependiendo de la poscion y, extraer un campo especifico
         int cont = 0;
         int j = 0, i = 0;
@@ -147,25 +150,25 @@ public class Metodos {
         }
         return ty;
     }
-    
-    public String CampoEspecifico(String r, int t){
-        int contador=0;
-        String zota="",z;
-        for (int i = 0; i < r.length() ; i++) {
-            z= r.substring(i, i+1);
-            if(":".equals(z)){
+
+    public String CampoEspecifico(String r, int t) {
+        int contador = 0;
+        String zota = "", z;
+        for (int i = 0; i < r.length(); i++) {
+            z = r.substring(i, i + 1);
+            if (":".equals(z)) {
                 contador++;
-                if(contador==t){
+                if (contador == t) {
                     return zota;
                 }
-                zota="";
-                z="";
+                zota = "";
+                z = "";
             }
-            zota = zota +z;
+            zota = zota + z;
         }
         return zota;
     }
-    
+
     public void Generador_de_Combobox(String x, JComboBox y) throws FileNotFoundException, IOException {
 
         File f = new File(x);
@@ -181,4 +184,21 @@ public class Metodos {
         }
 
     }
+
+    public void Sobreescribir(ListaCola lc, String archivo) throws IOException {
+        File f = new File(archivo);
+        FileWriter fw = new FileWriter(f);
+        BufferedWriter bw = new BufferedWriter(fw);
+        PrintWriter pw = new PrintWriter(bw);
+        Node p = lc.frente;
+        while (p != null) {
+            pw.print(p.info+"\r\n");
+            p=p.link;
+        }
+        pw.close();
+        bw.close();
+        fw.close();
+
+    }
+
 }
