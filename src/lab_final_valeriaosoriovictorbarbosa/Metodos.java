@@ -148,6 +148,24 @@ public class Metodos {
         return ty;
     }
     
+    public String CampoEspecifico(String r, int t){
+        int contador=0;
+        String zota="",z;
+        for (int i = 0; i < r.length() ; i++) {
+            z= r.substring(i, i+1);
+            if(":".equals(z)){
+                contador++;
+                if(contador==t){
+                    return zota;
+                }
+                zota="";
+                z="";
+            }
+            zota = zota +z;
+        }
+        return zota;
+    }
+    
     public void Generador_de_Combobox(String x, JComboBox y) throws FileNotFoundException, IOException {
 
         File f = new File(x);

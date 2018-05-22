@@ -1,4 +1,3 @@
-
 package lab_final_valeriaosoriovictorbarbosa;
 
 import java.io.BufferedWriter;
@@ -12,45 +11,41 @@ import javax.swing.JOptionPane;
 
 public class Inicio extends javax.swing.JFrame {
 
-    
     public Inicio() {
         initComponents();
         this.setLocationRelativeTo(null);
-        
-        
+
     }
-    
+
     public static String nick = "";
     public static int desicion;
     public static String orden = "";
+
    
-    
-    
-        public void registrar_nickname (String nickname, String temp) throws IOException{
+
+    public void registrar_nickname(String nickname, String temp) throws IOException {
         File F = new File("Nickname.txt");
         FileWriter fw = new FileWriter(F);
-        
-        BufferedWriter bw = new BufferedWriter(fw);
-        PrintWriter  pw = new PrintWriter(fw);
-        
-            if (nickname.contains(" ")) {
-               JOptionPane.showMessageDialog(null, "Su nickname no puede contener espacios");
-               pw.append(temp);
-               pw.close();
-               bw.close();
-               fw.close();
-            }else{
-               pw.write(nickname); 
-               pw.append(temp);
-               pw.close();
-               bw.close();
-               fw.close();    
-               JOptionPane.showMessageDialog(null, "¡Nickname creado con exito!");
-            }
 
+        BufferedWriter bw = new BufferedWriter(fw);
+        PrintWriter pw = new PrintWriter(fw);
+
+        if (nickname.contains(" ")) {
+            JOptionPane.showMessageDialog(null, "Su nickname no puede contener espacios");
+            pw.append(temp);
+            pw.close();
+            bw.close();
+            fw.close();
+        } else {
+            pw.write(nickname);
+            pw.append(temp);
+            pw.close();
+            bw.close();
+            fw.close();
+            JOptionPane.showMessageDialog(null, "¡Nickname creado con exito!");
+        }
 
     }
-
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -60,17 +55,17 @@ public class Inicio extends javax.swing.JFrame {
         jLabel2 = new javax.swing.JLabel();
         partida_nueva = new javax.swing.JButton();
         cargar = new javax.swing.JButton();
-        nicks = new javax.swing.JComboBox<>();
         jLabel1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(425, 500));
-        setPreferredSize(new java.awt.Dimension(400, 530));
+        setMinimumSize(new java.awt.Dimension(410, 500));
+        setPreferredSize(new java.awt.Dimension(410, 530));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Castellar", 0, 46)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(255, 255, 255));
         jLabel2.setText("Manos Ciegas");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, -1, -1));
 
@@ -84,7 +79,7 @@ public class Inicio extends javax.swing.JFrame {
                 partida_nuevaActionPerformed(evt);
             }
         });
-        jPanel1.add(partida_nueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 160, 40));
+        jPanel1.add(partida_nueva, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 250, 160, 40));
 
         cargar.setBackground(new java.awt.Color(102, 102, 102));
         cargar.setForeground(new java.awt.Color(255, 255, 255));
@@ -99,13 +94,7 @@ public class Inicio extends javax.swing.JFrame {
                 cargarActionPerformed(evt);
             }
         });
-        jPanel1.add(cargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 160, 40));
-
-        nicks.setBackground(new java.awt.Color(153, 153, 153));
-        nicks.setForeground(new java.awt.Color(255, 255, 255));
-        nicks.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        nicks.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(nicks, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 340, 70, 30));
+        jPanel1.add(cargar, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 330, 160, 40));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/clouds-fog-forest-6718.jpg"))); // NOI18N
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-100, 0, -1, 500));
@@ -118,15 +107,10 @@ public class Inicio extends javax.swing.JFrame {
     private void partida_nuevaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_partida_nuevaActionPerformed
         // TODO add your handling code here:
         String nickname = JOptionPane.showInputDialog(null, "Ingrese su nickname (No se permiten nicknames con espacios)");
-        Metodos m = new Metodos();
-       
-        /*try {
-            registrar_nickname (nickname, m.concatenar("CheckPoint.txt"));
-        } catch (IOException ex) {
-            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
-        }
         
-        */
+
+        
+         
         nick = nickname;
         Historia h;
         try {
@@ -135,24 +119,14 @@ public class Inicio extends javax.swing.JFrame {
         } catch (IOException ex) {
             Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
         }
-        
+
         dispose();
     }//GEN-LAST:event_partida_nuevaActionPerformed
 
     private void cargarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargarActionPerformed
         // TODO add your handling code here:
-        
-
-        String nickname = (String) nicks.getSelectedItem();
-        nick = nickname;
-        Historia h;
-        try {
-            h = new Historia();
-             h.setVisible(true);
-        } catch (IOException ex) {
-            Logger.getLogger(Inicio.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
+        CargarPartida h = new CargarPartida();
+        h.setVisible(true);
         dispose();
 
     }//GEN-LAST:event_cargarActionPerformed
@@ -187,10 +161,9 @@ public class Inicio extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                
-                    new Inicio().setVisible(true);
-                
-                 
+
+                new Inicio().setVisible(true);
+
             }
         });
     }
@@ -200,7 +173,6 @@ public class Inicio extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JComboBox<String> nicks;
     public javax.swing.JButton partida_nueva;
     // End of variables declaration//GEN-END:variables
 }

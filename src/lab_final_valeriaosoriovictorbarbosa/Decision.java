@@ -30,8 +30,6 @@ public class Decision extends javax.swing.JFrame {
         Impresor = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
-        Desicion = new javax.swing.JLabel();
-        Dia1 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -62,12 +60,11 @@ public class Decision extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 490, 50, 30));
+        jPanel2.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 450, 50, 30));
 
-        Dia.setFont(new java.awt.Font("Old English Text MT", 0, 20)); // NOI18N
-        Dia.setForeground(new java.awt.Color(255, 255, 255));
+        Dia.setFont(new java.awt.Font("Old English Text MT", 0, 48)); // NOI18N
         Dia.setText("Dia");
-        jPanel2.add(Dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 120, 230, 120));
+        jPanel2.add(Dia, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 230, 120));
 
         jButton2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jButton2.setText("↑");
@@ -76,13 +73,13 @@ public class Decision extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 490, 50, 30));
+        jPanel2.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 450, 50, 30));
 
         Impresor.setFont(new java.awt.Font("Bookman Old Style", 0, 14)); // NOI18N
         Impresor.setText("Impresor");
         Impresor.setToolTipText("");
         Impresor.setVerticalAlignment(javax.swing.SwingConstants.TOP);
-        jPanel2.add(Impresor, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, 220, 200));
+        jPanel2.add(Impresor, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 250, 270, 170));
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/marx.png"))); // NOI18N
         jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -94,16 +91,6 @@ public class Decision extends javax.swing.JFrame {
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/ada.jpg"))); // NOI18N
         jPanel2.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, -1, 530));
-
-        Desicion.setFont(new java.awt.Font("Old English Text MT", 0, 20)); // NOI18N
-        Desicion.setForeground(new java.awt.Color(255, 255, 255));
-        Desicion.setText("Desicion");
-        jPanel2.add(Desicion, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 10, 100, 30));
-
-        Dia1.setFont(new java.awt.Font("Old English Text MT", 0, 20)); // NOI18N
-        Dia1.setForeground(new java.awt.Color(255, 255, 255));
-        Dia1.setText("Dia");
-        jPanel2.add(Dia1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 100, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 380, 610));
 
@@ -178,9 +165,7 @@ public class Decision extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel Desicion;
     private javax.swing.JLabel Dia;
-    private javax.swing.JLabel Dia1;
     private javax.swing.JLabel Impresor;
     public javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;

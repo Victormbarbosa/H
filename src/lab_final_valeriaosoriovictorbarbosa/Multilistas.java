@@ -206,15 +206,7 @@ public class Multilistas {
 
                     }
                     if (i == popmax) {
-                        int j = i + 2;
-                        int res = t.length() - pop * 195;
-                        if (res > 0) {
-                            if (!" ".equals(t.substring(j, j + 1)) && !" ".equals(t.substring(j + 1, j + 2))) {
-
-                            } else {
-                                Impresor.setText(total + "-");
-                            }
-                        }
+                        
                         time.cancel();
 
                     }

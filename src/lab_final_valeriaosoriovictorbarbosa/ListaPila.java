@@ -33,7 +33,7 @@ class ListaPila {
         nuevo.link = cima;
         cima = nuevo;
     }
-
+    
     public String quitar() {
         if (pilaVacia()) {
             return "";

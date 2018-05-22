@@ -32,6 +32,7 @@ public class Historia extends javax.swing.JFrame {
         nickname.setText(in.nick);
         Metodos e = new Metodos();
         String h = String.valueOf(in.desicion);
+        esconder(Guardar);
         esconder(DesA);
         esconder(DesB);
         esconder(arriba);
@@ -78,7 +79,7 @@ public class Historia extends javax.swing.JFrame {
         B = new javax.swing.JLabel();
         A = new javax.swing.JLabel();
         nickname = new javax.swing.JLabel();
-        musica = new javax.swing.JButton();
+        Guardar = new javax.swing.JButton();
         abajo = new javax.swing.JButton();
         arriba = new javax.swing.JButton();
         Impresor = new javax.swing.JLabel();
@@ -88,7 +89,9 @@ public class Historia extends javax.swing.JFrame {
         Dia = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setMinimumSize(new java.awt.Dimension(380, 650));
+        setMaximumSize(new java.awt.Dimension(500, 800));
+        setMinimumSize(new java.awt.Dimension(381, 608));
+        setPreferredSize(new java.awt.Dimension(395, 645));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -146,15 +149,16 @@ public class Historia extends javax.swing.JFrame {
         nickname.setText("Nombre");
         jPanel2.add(nickname, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 580, 90, 20));
 
-        musica.setBackground(new java.awt.Color(255, 255, 255));
-        musica.setForeground(new java.awt.Color(0, 51, 102));
-        musica.setText("♫");
-        musica.addActionListener(new java.awt.event.ActionListener() {
+        Guardar.setBackground(new java.awt.Color(255, 255, 255));
+        Guardar.setForeground(new java.awt.Color(0, 51, 102));
+        Guardar.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/Entypo_d83d(0)_48.png"))); // NOI18N
+        Guardar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        Guardar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                musicaActionPerformed(evt);
+                GuardarActionPerformed(evt);
             }
         });
-        jPanel2.add(musica, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
+        jPanel2.add(Guardar, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 40, 40));
 
         abajo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
         abajo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/Entypo_e4b0(1)_28.png"))); // NOI18N
@@ -215,14 +219,6 @@ public class Historia extends javax.swing.JFrame {
     private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
         // TODO add your handling code here:
     }//GEN-LAST:event_jLabel1MouseClicked
-
-    private void musicaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_musicaActionPerformed
-        // TODO add your handling code here:
-        JOptionPane.showMessageDialog(null, "Creditos a Uniq en youtube y soundcloud. (Tranqui profe, no tiene copyright)");
-        AudioClip sonido;
-        sonido = java.applet.Applet.newAudioClip(getClass().getResource("/lab_final_valeriaosoriovictorbarbosa/Art Of Silence_V2.wav"));
-        sonido.play();
-    }//GEN-LAST:event_musicaActionPerformed
 
     private void DesAActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DesAActionPerformed
         Inicio in = new Inicio();
@@ -294,6 +290,11 @@ public class Historia extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_abajoActionPerformed
 
+    private void GuardarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GuardarActionPerformed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_GuardarActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -342,6 +343,7 @@ public class Historia extends javax.swing.JFrame {
     private javax.swing.JButton DesB;
     private javax.swing.JLabel Desicion;
     private javax.swing.JLabel Dia;
+    private javax.swing.JButton Guardar;
     private javax.swing.JLabel Impresor;
     private javax.swing.JButton UA;
     public javax.swing.JButton abajo;
@@ -352,7 +354,6 @@ public class Historia extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JLabel marco;
-    private javax.swing.JButton musica;
     public javax.swing.JLabel nickname;
     public static javax.swing.JProgressBar progresohistoria;
     // End of variables declaration//GEN-END:variables
