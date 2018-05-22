@@ -28,32 +28,32 @@ public class ListaCola {
         }
         fin = a;
     }
-    
-    public void ShowList(){
-        Node p=frente;
-        while(p!=null){
-            System.out.println(""+p.info);
-            p=p.link;
+
+    public void ShowList() {
+        Node p = frente;
+        while (p != null) {
+            System.out.println("" + p.info);
+            p = p.link;
         }
     }
-    
-    public String quitar() {
-        String aux;
-        if (!colaVacia()) {
-            aux = frente.info;
-            frente = frente.link;
 
+    public void Eliminar(Node p, Node antp, ListaCola lc) {
+
+        if (p.info.equals(lc.frente.info)) {
+            antp = antp.link;
+            lc.frente = lc.frente.link;
+            p.link = null;
         } else {
-            return "";
+            if (!p.info.equals(lc.frente.info) && !p.info.equals(lc.fin.info)) {
+                antp.link = p.link;
+                p.link = null;
+            } else {
+                if (p.link==null) {
+                    fin=antp;
+                    antp.link = null;
+                }
+            }
         }
-        return aux;
-    }
-
-    public void borrarCola() {
-        while (frente != null) {
-            frente = frente.link;
-        }
-
     }
 
     public boolean colaVacia() {

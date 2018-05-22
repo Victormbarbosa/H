@@ -1,4 +1,2 @@
-1:luiza:
-3:Juliana:
-1:Pepita:
-3:Victor:BB:
+2:Hariana:
+4:Fusto:

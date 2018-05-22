@@ -14,9 +14,9 @@ import javax.swing.JOptionPane;
 import static lab_final_valeriaosoriovictorbarbosa.Inicio.nick;
 
 public class CargarPartida extends javax.swing.JFrame {
-    
+
     public static ListaCola lc;
-    
+
     public CargarPartida() {
         initComponents();
         this.setLocationRelativeTo(null);
@@ -38,23 +38,21 @@ public class CargarPartida extends javax.swing.JFrame {
         String ty;
         if (bef.isEmpty() || bef.length() == 1) {
             JOptionPane.showMessageDialog(null, "No existen Checkpoints previos.");
-        } else{
-            while (bef!=null) {
+        } else {
+            while (bef != null) {
                 lc.insertar(bef);
-                bef=br.readLine();;
+                bef = br.readLine();;
             }
             /*lc.ShowList();*/
         }
         br.close();
         fr.close();
-        Node p=lc.frente;
-        while(p!=null){
+        Node p = lc.frente;
+        while (p != null) {
             nicks.addItem(e.CampoEspecifico(p.info, 2));
-            p=p.link;
+            p = p.link;
         }
     }
-
-    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -144,6 +142,35 @@ public class CargarPartida extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void EliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_EliminarActionPerformed
+        Node p = lc.frente;
+        Node antp = p;
+        Metodos e = new Metodos();
+        Inicio in = new Inicio();
+        String nickname = (String) nicks.getSelectedItem();
+        nick = nickname;
+        boolean sw = false;
+        while (p != null && sw == false) {
+            if (nick.equals(e.CampoEspecifico(p.info, 2))) {
+                
+                    lc.Eliminar(p, antp, lc);
+                    sw = true;
+                
+            }
+            antp=p;
+            p = p.link;
+        }
+        try {
+            e.Sobreescribir(lc, "CheckPoint.txt");
+        } catch (IOException ex) {
+            Logger.getLogger(CargarPartida.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        Node t = lc.frente;
+        nicks.removeAllItems();
+        nicks.addItem("...");
+        while (t != null) {
+            nicks.addItem(e.CampoEspecifico(t.info, 2));
+            t = t.link;
+        }
 
     }//GEN-LAST:event_EliminarActionPerformed
 
@@ -154,12 +181,12 @@ public class CargarPartida extends javax.swing.JFrame {
         Inicio in = new Inicio();
         String nickname = (String) nicks.getSelectedItem();
         nick = nickname;
-        while(p!=null){
-            if(nick.equals(e.CampoEspecifico(p.info, 2))){
-                in.desicion=Integer.parseInt(e.CampoEspecifico(p.info, 1))-1;
+        while (p != null) {
+            if (nick.equals(e.CampoEspecifico(p.info, 2))) {
+                in.desicion = Integer.parseInt(e.CampoEspecifico(p.info, 1)) - 1;
                 in.orden = e.CampoEspecifico(p.info, 3);
             }
-            p=p.link;
+            p = p.link;
         }
         Historia h;
         try {
