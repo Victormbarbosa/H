@@ -1,0 +1,29 @@
+1:
+Primer Dia Primera Desicion;
+ : Despiertas y todo esta oscuro.
+Estas sentado, un tanto adolorido, y no entiendes nada.
+Parpadeas varias veces, confundido, en un intento de poder identificar cualquier figura.
+Te mueves ligeramente, pero esa pequeña acción es suficiente para hacerte soltar un quejido del dolor.
+El dolor proviene de tu abdomen.
+Te asustas, y bajas tu mano por tu pecho hasta sentir una herida.
+Un líquido espeso se pega en tu palma.
+“Es sangre”, piensas, y tu respiración se agita.
+Levantas la vista, y una débil luz irrita tus ojos.
+Proviene de afuera.
+Debates mentalmente la idea de acercarte y observar el exterior.
+Suena como una muy mala idea, pero luego de debatirlo un rato finalmente decides hacerlo.
+Con mucho esfuerzo, te levantas de tu asiento y caminas hacia la luz.
+Entre más te acercas, más nitida se hace la imagen de una puerta entreabierta.
+Una vez llegas, intentas ver lo que hay afuera, pero la luz irrita tus ojos.
+En cambio, escuchas murmullos, por lo que retrocedes, aterrado.
+En parte, porque no entiendes lo que dicen, y en parte, porque tienes un mal presentimiento acerca de ellos.
+“¿Qué hago?”, te preguntas...:A.Debería salir :B.Debería esconderme:;
+2:
+Primer Dia Segunda Desicion;
+A: Esta es la opcion  :A.posible opcion:B.Este es un texto prueba:;
+B: Esta es la opcion  :A. posible opcion:B. Posible opcion:;
+2:
+Segundo Dia Primera Desicion;
+AA: Texto prueba El jugador Pierde:Hasta aqui ha llegado tu camino: :;
+BB: Texto Prueba El jugador Gana: :Felicidades Afortunado:;
+FIN;
