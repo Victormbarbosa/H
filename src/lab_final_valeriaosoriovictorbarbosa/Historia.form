@@ -95,7 +95,7 @@
                   <Font name="Bookman Old Style" size="24" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Users\Victor\Desktop\borde2122.png"/>
+                  <Image iconType="3" name="/Multimedia/borde2122.png"/>
                 </Property>
               </Properties>
               <Constraints>
@@ -218,7 +218,7 @@
                   <Font name="Tahoma" size="24" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Users\Victor\Desktop\Entypo_e4b0(1)_28.png"/>
+                  <Image iconType="3" name="/Multimedia/Entypo_e4b0(1)_28.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>
@@ -245,7 +245,7 @@
                   <Font name="Times New Roman" size="18" style="1"/>
                 </Property>
                 <Property name="icon" type="javax.swing.Icon" editor="org.netbeans.modules.form.editors2.IconEditor">
-                  <Image iconType="2" name="D:\Users\Victor\Desktop\Entypo_e4af(0)_28.png"/>
+                  <Image iconType="3" name="/Multimedia/Entypo_e4af(0)_28.png"/>
                 </Property>
                 <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
                   <Border info="null"/>

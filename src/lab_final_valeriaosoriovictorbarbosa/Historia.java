@@ -109,7 +109,7 @@ public class Historia extends javax.swing.JFrame {
         jPanel2.add(UA, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 120, 30));
 
         marco.setFont(new java.awt.Font("Bookman Old Style", 1, 24)); // NOI18N
-        marco.setIcon(new javax.swing.ImageIcon("D:\\Users\\Victor\\Desktop\\borde2122.png")); // NOI18N
+        marco.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/borde2122.png"))); // NOI18N
         jPanel2.add(marco, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 290, 120, 30));
 
         DesA.setText("A");
@@ -157,7 +157,7 @@ public class Historia extends javax.swing.JFrame {
         jPanel2.add(musica, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 10, -1, -1));
 
         abajo.setFont(new java.awt.Font("Tahoma", 1, 24)); // NOI18N
-        abajo.setIcon(new javax.swing.ImageIcon("D:\\Users\\Victor\\Desktop\\Entypo_e4b0(1)_28.png")); // NOI18N
+        abajo.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/Entypo_e4b0(1)_28.png"))); // NOI18N
         abajo.setBorder(null);
         abajo.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         abajo.addActionListener(new java.awt.event.ActionListener() {
@@ -168,7 +168,7 @@ public class Historia extends javax.swing.JFrame {
         jPanel2.add(abajo, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 220, 30, 30));
 
         arriba.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        arriba.setIcon(new javax.swing.ImageIcon("D:\\Users\\Victor\\Desktop\\Entypo_e4af(0)_28.png")); // NOI18N
+        arriba.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Multimedia/Entypo_e4af(0)_28.png"))); // NOI18N
         arriba.setBorder(null);
         arriba.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         arriba.addActionListener(new java.awt.event.ActionListener() {
